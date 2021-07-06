@@ -17,7 +17,7 @@ class Calculator:
         self.ux = UXElements(self.sg)
 
         self.window = self.sg.Window('Calculator', self.ux.layout, background_color=self.ux.background_color,
-                                     finalize=True,grab_anywhere=True)
+                                     finalize=True, grab_anywhere=True, size=(420,510))
 
     def main(self):
         """The main method"""
@@ -26,7 +26,7 @@ class Calculator:
         decimal_allowed = True
         while True:
             event, value = self.window.read()
-            print(event, value)
+
             if event == self.sg.WIN_CLOSED or event == '-quit-':
                 break
             elif event == '1':
